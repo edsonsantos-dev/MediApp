@@ -1,0 +1,16 @@
+{
+  "name": "mediapp",
+  "version": "1.0.0",
+  "description": "Api criada no curso Programação II, da graduação em ADS.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edson Santos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.4"
+  }
+}
