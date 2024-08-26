@@ -6,7 +6,7 @@ const getAllAppointment = async () => {
 
 const getAppointment = async (id) => {
     try {
-        return await Appointment.findByPk(id);
+        return await Appointment.findById(id);
     } catch (error) {
         throw new Error(error); W
     }

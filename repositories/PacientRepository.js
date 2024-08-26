@@ -10,7 +10,7 @@ const getAllPacient = async () => {
 
 const getPacient = async (id) => {
     try {
-        return await Pacient.findByPk(id);
+        return await Pacient.findById(id);
     } catch (error) {
         throw new Error(error);
     }

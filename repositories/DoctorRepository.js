@@ -11,7 +11,7 @@ const getAllDoctors = async () => {
 
 const getDoctor = async (id) => {
     try {
-        return await Doctor.findByPk(id);
+        return await Doctor.findById(id);
     } catch (error) {
         throw new Error(error);
     }

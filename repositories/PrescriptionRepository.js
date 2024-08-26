@@ -10,7 +10,7 @@ const getAllPrescriptions = async () => {
 
 const getPrescription = async (id) => {
     try {
-        return await Prescription.findByPk(id);
+        return await Prescription.findById(id);
     } catch (error) {
         throw new Error(error);
     }
