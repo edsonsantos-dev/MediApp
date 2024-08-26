@@ -9,7 +9,7 @@ const getDoctor = async (id) => {
 }
 
 const saveDoctor = async ({ name, login, password, medicalSpecialty, medicalRegistration, email, phone }) => {
-    return DoctorRepository.saveAppointment({ name, login, password, medicalSpecialty, medicalRegistration, email, phone });
+    return DoctorRepository.saveDoctor({ name, login, password, medicalSpecialty, medicalRegistration, email, phone });
 }
 
 const updateDoctor = async (id, { name, login, password, medicalSpecialty, medicalRegistration, email, phone }) => {

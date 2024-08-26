@@ -3,7 +3,7 @@ import PrescriptionService from "../services/PrescriptionService.js";
 
 let router = express.Router();
 
-router.get('prescriptions', async (req, res) => {
+router.get('/prescriptions', async (req, res) => {
     try {
         const prescriptions = await PrescriptionService.getAllPrescriptions();
         res.send(prescriptions);
@@ -13,7 +13,7 @@ router.get('prescriptions', async (req, res) => {
     }
 });
 
-router.get('getPrescription/:id', async (req, res) => {
+router.get('/getPrescription/:id', async (req, res) => {
     const id = req.params;
     try {
         const prescription = await PrescriptionService.getPrescription(id);
@@ -24,7 +24,7 @@ router.get('getPrescription/:id', async (req, res) => {
     }
 });
 
-router.post('postPrescription', async (req, res) => {
+router.post('/postPrescription', async (req, res) => {
     const { date, appointmentId, medicine, dosage, instructions } = req.body;
     try {
         const prescription = await PrescriptionService.savePrescription({ date, appointmentId, medicine, dosage, instructions });
@@ -35,7 +35,7 @@ router.post('postPrescription', async (req, res) => {
     }
 });
 
-router.put('putPrescription/:id', async (req, res) => {
+router.put('/putPrescription/:id', async (req, res) => {
     const id = req.params;
     const { date, appointmentId, medicine, dosage, instructions } = req.body;
     try {
@@ -47,7 +47,7 @@ router.put('putPrescription/:id', async (req, res) => {
     }
 });
 
-router.delete('deletePrescription/:id', async (req, res) => {
+router.delete('/deletePrescription/:id', async (req, res) => {
     const id = req.params;
     try {
         const prescription = await PrescriptionService.deletePrescription(id);

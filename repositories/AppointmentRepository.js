@@ -1,7 +1,7 @@
 import Appointment from "../models/Appointment.js";
 
 const getAllAppointment = async () => {
-    return await Appointment.findAll();
+    return await Appointment.find();
 }
 
 const getAppointment = async (id) => {

@@ -2,7 +2,7 @@ import Pacient from "../models/Pacient.js";
 
 const getAllPacient = async () => {
     try {
-        return await Pacient.findAll();
+        return await Pacient.find();
     } catch (error) {
         throw new Error(error);
     }

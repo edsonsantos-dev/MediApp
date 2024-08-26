@@ -3,7 +3,7 @@ import AppointmentService from "../services/AppointmentService.js";
 
 let router = express.Router();
 
-router.get('appoiments', async (req, res) => {
+router.get('/appoiments', async (req, res) => {
     try {
         const appointments = await AppointmentService.getAllAppointment();
         res.send(appointments);
@@ -13,7 +13,7 @@ router.get('appoiments', async (req, res) => {
     }
 });
 
-router.get('getAppointment/:id', async (req, res) => {
+router.get('/getAppointment/:id', async (req, res) => {
     const id = req.params;
     try {
         const appoiment = await AppointmentService.getAppointment(id);
@@ -24,7 +24,7 @@ router.get('getAppointment/:id', async (req, res) => {
     }
 });
 
-router.post('postAppointment', async (req, res) => {
+router.post('/postAppointment', async (req, res) => {
     const { date, doctorId, pacientId } = req.body;
     try {
         const appoiment = await AppointmentService.saveAppointment({ date, doctorId, pacientId });
@@ -35,7 +35,7 @@ router.post('postAppointment', async (req, res) => {
     }
 });
 
-router.put('putAppointment/:id', async (req, res) => {
+router.put('/putAppointment/:id', async (req, res) => {
     const id = req.params;
     const { date, doctorId, pacientId } = req.body;
     try {
@@ -47,7 +47,7 @@ router.put('putAppointment/:id', async (req, res) => {
     }
 });
 
-router.delete('deleteAppointment/:id', async (req, res) => {
+router.delete('/deleteAppointment/:id', async (req, res) => {
     const id = req.params;
     try {
         const appoiment = await AppointmentService.deleteAppointment(id);

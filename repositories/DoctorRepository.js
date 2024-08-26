@@ -3,7 +3,7 @@ import Doctor from "../models/Doctor.js";
 const getAllDoctors = async () => {
     try {
 
-        return await Doctor.findAll();
+        return await Doctor.find();
     } catch (error) {
         throw new Error(error);
     }

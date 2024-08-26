@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect(`mongodb://localhost:27027/MediApp`);
+mongoose.connect(`mongodb://localhost:27017/MediApp`);
 
 const db = mongoose.connection;
 

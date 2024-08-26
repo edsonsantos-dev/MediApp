@@ -2,7 +2,7 @@ import Prescription from "../models/Prescription.js";
 
 const getAllPrescriptions = async () => {
     try {
-        return await Prescription.findAll();
+        return await Prescription.find();
     } catch (error) {
         throw new Error(error);
     }

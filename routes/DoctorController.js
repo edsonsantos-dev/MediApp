@@ -4,7 +4,7 @@ import DoctorService from "../services/DoctorService.js";
 
 let router = express.Router();
 
-router.get('doctors', async (req, res) => {
+router.get('/doctors', async (req, res) => {
     try {
         const doctors = await DoctorService.getAllDoctors();
         res.send(doctors);
@@ -14,7 +14,7 @@ router.get('doctors', async (req, res) => {
     }
 });
 
-router.get('getDoctor/:id', async (req, res) => {
+router.get('/getDoctor/:id', async (req, res) => {
     const id = req.params;
     try {
         const doctor = await DoctorService.getDoctor(id);
@@ -25,7 +25,7 @@ router.get('getDoctor/:id', async (req, res) => {
     }
 });
 
-router.post('postDoctor', async (req, res) => {
+router.post('/postDoctor', async (req, res) => {
     const { name, login, password, medicalSpecialty, medicalRegistration, email, phone } = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -37,7 +37,7 @@ router.post('postDoctor', async (req, res) => {
     }
 });
 
-router.put('putDoctor/:id', async (req, res) => {
+router.put('/putDoctor/:id', async (req, res) => {
     const id = req.params;
     const { name, login, password, medicalSpecialty, medicalRegistration, email, phone } = req.body;
     try {
@@ -49,7 +49,7 @@ router.put('putDoctor/:id', async (req, res) => {
     }
 });
 
-router.delete('deleteDoctor/:id', async (req, res) => {
+router.delete('/deleteDoctor/:id', async (req, res) => {
     const id = req.params;
     try {
         const doctor = await DoctorService.deleteDoctor(id);
