@@ -14,7 +14,7 @@ router.get('/prescriptions', async (req, res) => {
 });
 
 router.get('/getPrescription/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     try {
         const prescription = await PrescriptionService.getPrescription(id);
         res.send(prescription);
@@ -36,7 +36,7 @@ router.post('/postPrescription', async (req, res) => {
 });
 
 router.put('/putPrescription/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     const { date, appointmentId, medicine, dosage, instructions } = req.body;
     try {
         const prescription = await PrescriptionService.updatePrescription(id, { date, appointmentId, medicine, dosage, instructions });
@@ -48,7 +48,7 @@ router.put('/putPrescription/:id', async (req, res) => {
 });
 
 router.delete('/deletePrescription/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     try {
         const prescription = await PrescriptionService.deletePrescription(id);
         res.send(prescription);

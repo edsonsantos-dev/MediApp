@@ -15,7 +15,7 @@ router.get('/doctors', async (req, res) => {
 });
 
 router.get('/getDoctor/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     try {
         const doctor = await DoctorService.getDoctor(id);
         res.send(doctor);
@@ -38,7 +38,7 @@ router.post('/postDoctor', async (req, res) => {
 });
 
 router.put('/putDoctor/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     const { name, login, password, medicalSpecialty, medicalRegistration, email, phone } = req.body;
     try {
         const doctor = await DoctorService.updateDoctor(id, { name, login, password, medicalSpecialty, medicalRegistration, email, phone });
@@ -50,7 +50,7 @@ router.put('/putDoctor/:id', async (req, res) => {
 });
 
 router.delete('/deleteDoctor/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     try {
         const doctor = await DoctorService.deleteDoctor(id);
         res.send(doctor);

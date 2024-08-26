@@ -14,7 +14,7 @@ router.get('/appoiments', async (req, res) => {
 });
 
 router.get('/getAppointment/:id', async (req, res) => {
-    const id = req.params;
+    const { id } = req.params;
     try {
         const appoiment = await AppointmentService.getAppointment(id);
         res.send(appoiment);
@@ -36,7 +36,7 @@ router.post('/postAppointment', async (req, res) => {
 });
 
 router.put('/putAppointment/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     const { date, doctorId, pacientId } = req.body;
     try {
         const appoiment = await AppointmentService.updateAppointment(id, { date, doctorId, pacientId });
@@ -48,7 +48,7 @@ router.put('/putAppointment/:id', async (req, res) => {
 });
 
 router.delete('/deleteAppointment/:id', async (req, res) => {
-    const id = req.params;
+    const { id }= req.params;
     try {
         const appoiment = await AppointmentService.deleteAppointment(id);
         res.send(appoiment)
