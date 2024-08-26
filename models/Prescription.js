@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     date: {
         type: Date,
+        required: [true, 'Date is required']
     },
     appointmentId: {
         type: String,
@@ -19,8 +20,7 @@ const schema = new Schema({
         required: [true, 'Dosage is required']
     },
     instructions: {
-        type: String,
-        required: [true, 'Instructions is required']
+        type: String
     },
     createdAt: {
         type: Date,

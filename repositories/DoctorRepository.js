@@ -1,0 +1,54 @@
+import Doctor from "../models/Doctor.js";
+
+const getAllDoctors = async () => {
+    try {
+
+        return await Doctor.findAll();
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+const getDoctor = async (id) => {
+    try {
+        return await Doctor.findByPk(id);
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+const saveDoctor = async ({ name, login, password, medicalSpecialty, medicalRegistration, email, phone }) => {
+    try {
+        const doctor = new Doctor({ name, login, password, medicalSpecialty, medicalRegistration, email, phone });
+        await doctor.save();
+        return doctor;
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+const updateDoctor = async (id, { name, login, password, medicalSpecialty, medicalRegistration, email, phone }) => {
+    try {
+        return await Doctor.findByIdAndUpdate(id, { name, login, password, medicalSpecialty, medicalRegistration, email, phone }, { new: true });
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+const deleteDoctor = async (id) => {
+    try {
+        return await Doctor.findByIdAndDelete(id);
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
+const doctorRepository = {
+    getAllDoctors,
+    getDoctor,
+    saveDoctor,
+    updateDoctor,
+    deleteDoctor
+}
+
+export default doctorRepository;
